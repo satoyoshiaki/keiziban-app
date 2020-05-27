@@ -28,7 +28,7 @@ class GungemesController < ApplicationController
 
     respond_to do |format|
       if @gungeme.save
-        format.html { redirect_to @gungeme, notice: 'Gungeme was successfully created.' }
+        format.html { redirect_to @gungeme, notice: '募集を作成しました！' }
         format.json { render :show, status: :created, location: @gungeme }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GungemesController < ApplicationController
   def update
     respond_to do |format|
       if @gungeme.update(gungeme_params)
-        format.html { redirect_to @gungeme, notice: 'Gungeme was successfully updated.' }
+        format.html { redirect_to @gungeme, notice: '編集が適応されました' }
         format.json { render :show, status: :ok, location: @gungeme }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class GungemesController < ApplicationController
   def destroy
     @gungeme.destroy
     respond_to do |format|
-      format.html { redirect_to gungemes_url, notice: 'Gungeme was successfully destroyed.' }
+      format.html { redirect_to gungemes_url, notice: '募集を削除しました！' }
       format.json { head :no_content }
     end
   end
